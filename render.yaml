@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tamo-dienynas-mcp
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: TAMO_USERNAME
+        sync: false
+      - key: TAMO_PASSWORD
+        sync: false
+      - key: MCP_TOKEN
+        generateValue: true
+      - key: MCP_PATH_TOKEN
+        generateValue: true
