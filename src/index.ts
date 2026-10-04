@@ -32,7 +32,7 @@ const safeEqual = (actual: string, expected: string) => {
 // Clients that support headers use /mcp with a bearer token; ChatGPT only takes a URL, so it gets /<path token>/mcp.
 const authorized = (path: string, authorization: string | undefined) => {
   if (path === "/mcp") return authorization?.startsWith("Bearer ") === true && safeEqual(authorization.slice(7), headerToken);
-  const match = path.match(/^\/([^/]+)\/mcp$/);
+  const match = path.match(/^\/(.+)\/mcp$/);
   return match !== null && safeEqual(match[1]!, pathToken);
 };
 
@@ -42,7 +42,7 @@ const httpServer = createHttpServer(async (request, response) => {
     response.writeHead(200, { "Content-Type": "text/plain" }).end("ok");
     return;
   }
-  if (path !== "/mcp" && !/^\/[^/]+\/mcp$/.test(path)) {
+  if (path !== "/mcp" && !/^\/.+\/mcp$/.test(path)) {
     response.writeHead(404).end();
     return;
   }
