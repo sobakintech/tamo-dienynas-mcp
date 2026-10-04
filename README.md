@@ -13,7 +13,7 @@ Built on the [unofficial TAMO dienynas API reference](https://github.com/sobakin
 | --- | --- |
 | `get_schedule` | Lessons for a week: times, subject, teacher, topic, grades, formative assessments, homework, test labels |
 | `get_grades` | Grades, formative assessments and attendance for a date range (up to 400 days) |
-| `get_homework` | Homework with due dates, attachments and completion state, filterable by done / not done |
+| `get_homework` | Homework due in a date range, with attachments and completion state, filterable by done / not done |
 | `get_classwork` | What was done in lessons |
 | `get_notifications` | The recent feed: new grades, homework, absences, praise, remarks |
 | `get_school_calendar` | Holidays, breaks and school-wide events for a month |

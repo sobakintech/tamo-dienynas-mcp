@@ -89,7 +89,7 @@ export const createServer = (tamo: TamoClient): McpServer => {
     {
       title: "Homework",
       description:
-        "Homework for lessons in a date range (default: from 14 days ago to 21 days ahead, at most 62 days), with due dates, attachments and whether it is marked done.",
+        "Homework whose due date falls in a date range (default: due from 14 days ago to 21 days ahead, at most 62 days), with assignment dates, attachments and whether it is marked done.",
       inputSchema: {
         from: date.optional(),
         to: date.optional(),
