@@ -1,0 +1,8 @@
+services:
+  tamo-mcp:
+    image: ghcr.io/sobakintech/tamo-dienynas-mcp:latest
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
