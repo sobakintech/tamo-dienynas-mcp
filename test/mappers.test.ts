@@ -161,6 +161,7 @@ test("dates use Vilnius time and split long ranges", () => {
 
 test("text helpers strip HTML and detect placeholders", () => {
   assert.equal(plain("Skaityti<br>12&nbsp;psl. &amp; 13"), "Skaityti\n12 psl. & 13");
+  assert.equal(plain("a;\r\nb"), "a;\nb");
   assert.equal(isPlaceholder(" – "), true);
   assert.equal(isPlaceholder("..."), true);
   assert.equal(isPlaceholder("7 pratimas"), false);

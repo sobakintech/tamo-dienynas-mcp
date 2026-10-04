@@ -17,8 +17,9 @@ const decodeEntities = (value: string): string =>
   });
 
 // TAMO text fields mix plain text and small HTML fragments.
-export const plain = (value: string): string => {
-  if (!value) return "";
+export const plain = (raw: string): string => {
+  if (!raw) return "";
+  const value = raw.replace(/\r\n?/g, "\n");
   if (!value.includes("<") && !value.includes("&")) return value.trim();
   const text = value
     .replace(/<br\s*\/?>/gi, "\n")
