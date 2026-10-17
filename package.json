@@ -2,6 +2,7 @@
   "name": "tamo-dienynas-mcp",
   "version": "0.1.0",
   "description": "Read-only MCP server for the TAMO dienynas school diary",
+  "license": "AGPL-3.0-only",
   "type": "module",
   "private": true,
   "engines": {
